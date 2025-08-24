@@ -108,8 +108,8 @@ fun BottomNavigationBar(
                     fontSize = 12.sp
                 )
             },
-            selected = false,
-            onClick = { },
+            selected = (currentRoute == "assistant"),
+            onClick = { navController.navigate("assistant") },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.Black,
                 unselectedIconColor = Color.Gray,

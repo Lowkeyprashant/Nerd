@@ -1,5 +1,6 @@
 package com.codewithprashant.nerd
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -9,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -32,12 +34,20 @@ fun LoginScreen(navController: NavController) {
     ) {
         Spacer(modifier = Modifier.height(60.dp))
 
-        Text(
-            text = "Learn",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.Black
-        )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Image(
+                painter = painterResource(id = R.drawable.nerd), // Assuming nerd.png becomes R.drawable.nerd
+                contentDescription = "Nerd Logo",
+                modifier = Modifier.size(48.dp) // You can adjust the size
+            )
+            Spacer(modifier = Modifier.width(8.dp)) // You can adjust the spacing
+            Text(
+                text = "Nerd",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
+            )
+        }
 
         Spacer(modifier = Modifier.height(60.dp))
 

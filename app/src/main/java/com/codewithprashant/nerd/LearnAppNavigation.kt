@@ -11,7 +11,7 @@ fun LearnAppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "home"
+        startDestination = "login"
     ) {
         composable("home") {
             HomeScreen(navController = navController)
@@ -46,6 +46,10 @@ fun LearnAppNavigation() {
         }
         composable("profile") {
             ProfileScreen(navController = navController)
+        }
+
+        composable("assistant") {
+            AssistantScreen(navController = navController)
         }
     }
 }

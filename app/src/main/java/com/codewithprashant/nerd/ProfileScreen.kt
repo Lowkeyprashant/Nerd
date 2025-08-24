@@ -1,5 +1,6 @@
 package com.codewithprashant.nerd
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,12 +12,16 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.codewithprashant.nerd.R // Added for R.drawable.luffy
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,19 +60,14 @@ fun ProfileScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(
+            Image(
+                painter = painterResource(id = R.drawable.luffy),
+                contentDescription = "User Avatar",
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(100.dp)
-                    .background(Color(0xFFFDCB6E), CircleShape)
-            ) {
-                Text(
-                    text = "E",
-                    fontSize = 36.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White,
-                    modifier = Modifier.align(Alignment.Center)
-                )
-            }
+                    .clip(CircleShape)
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
